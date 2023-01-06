@@ -1,0 +1,88 @@
+En un documento de texto y adjuntando las capturas de pantalla que considere necesarias, muestre el  proceso para crear una aplicación en Android que tenga:
+
+Un menú con las siguientes opciones:
+Imagen.
+Sonido.
+Vídeo.
+Otros.
+Salir.
+Que muestre varios botones de diferentes estilos.
+Que muestre una estructura visual usando Layouts
+Muestre los ficheros necesarios para su proyecto y el resultado final del mismo a través de diferentes pruebas.
+
+
+
+<Button
+	android:layout_width = "wrap_content"
+	android:layout_heigth = "wrap_content"
+	android:text = "@string/button_text"
+.... />
+
+
+<ImageButton
+	android:layout_width = "wrap_content"
+	android:layout_heigth = "wrap_content"
+	android:src = "@drawable/button_icon"
+.... />
+
+
+<Button
+	android:layout_width = "wrap_content"
+	android:layout_heigth = "wrap_content"
+	android:text = "@string/button_text"
+	android:drawableLeft =  "@drawable/button_icon"
+.... />
+
+<ToggleButton
+	android:id="@+id/botontogle"
+	android:layout_width = "wrap_content"
+	android:layout_heigth = "wrap_content"
+	android:textOn = "Vibrate on"
+	android:textOff="Vibrate off"
+	android:onClick="onToggleClicked"/>
+
+public void onToggleClicked(View view) {
+	// Is the toggle on?
+	boolean on = ((ToggleButton) view).isChecked();
+	if (on) {
+		//Enable vibrate
+	} else {
+		//Disable vibrate
+	}
+
+	
+
+
+DEFINIR BOTON CLASICO
+
+<Button android:id="@+id/BtnBoton1"
+	android:text = "@string/pulsame"
+	android:layout_width = "wrap_content"
+	android:layout_heigth = "wrap_content"
+	
+.... />
+
+
+MENU
+
+<?xml version=!1.0" encoding="utf-8"?>
+
+@Override 
+public boolean onCreateOptionsMenu (Menu menu)
+	getMenuInflater().inflate(R.menu.menu, menu);
+	return true;
+}
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item	android:id="@+id/Menu_Opcion1"
+		android:title="Imagen" />
+	<item	android:id="@+id/Menu_Opcion2"
+		android:title="Sonido" />
+	<item	android:id="@+id/Menu_Opcion3"
+		android:title="Video" />
+	<item	android:id="@+id/Menu_Opcion4"
+		android:title="Otros" />
+	<item	android:id="@+id/Menu_Opcion5"
+		android:title="Salir" />
+</menu>
+
+

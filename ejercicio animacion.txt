@@ -1,0 +1,21 @@
+Cree una aplicación en  Android que muestre una imagen y esta misma tenga animación gracias a los cambios de posición y de tamaño de la misma. Indique los ficheros necesarios para su proyecto y el resultado final del mismo.
+
+public void rotar(View view){
+	ImageView imagen = (ImageView)findViewById(R.id.imageView);
+	Animation anmacion = AnimationUtils.loadAnimation(getApplicationContext(), R.anim..rotar);
+	imagen.startAnimation(animacion);
+}
+
+EFECTO EN SI DE ANIMACION
+
+android:fromDegrees="0"
+android:toDegrees="360"
+android:pivotX="81%"
+android:pivotY="50%"
+android:duration="4000"
+
+
+
+android:fromAlpha="0"
+android:toAlpha="1"
+android:duration="2000"
