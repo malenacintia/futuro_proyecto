@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación perfil</title>
+    <link rel="stylesheet" href="estilos_crud.css">
+</head>
+
+<body>
+    <h1><a href="index.html">Kinegym</a></h1>
+    <h2>Iniciá sesión</h2>
+
+    <form action=""  name="formulario_log" id="formulario_log">
+            <label for="usuario">Nombre de usuario </label> <br>
+            <input type="text" id="usuario" name="usuario" placeholder="Ingrese su nombre de usuario" cols="30"> <br><br>
+            <label for="">Contraseña</label> <br>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" cols="30">
+            <br><br>
+        <input class="contenedor-centrado boton" type="button" id="b1" value="Enviar" onclick="validarEnviar()">
+    </form>
+    
+
+    <script>
+       // usuario = document.getElementById("usuario")
+       // contraseña = document.getElementById("contraseña")
+
+        function validarEnviar() {
+            //valido el nombre
+            if (document.formulario_log.usuario.value.length  == 0) {
+                alert("Tiene que escribir su nombre")
+                document.formulario_log.usuario.focus()
+                return 0
+            }
+
+            //valido la edad. tiene que ser entero mayor que 18
+            if (document.formulario_log.contraseña.value.length == 0) {
+                alert("Introduzca su contraseña")
+                document.formulario_log.contraseña.focus()
+                return 0
+            } else {
+                if (document.formulario_log.contraseña.value.length < 5) {
+                alert("La contraseña debe tener por lo menos 5 caracteres")
+                document.formulario_log.contraseña.focus()
+                return 0
+                }
+            }
+
+            if (document.formulario_log.usuario.value !== "malena" && document.formulario_log.contraseña.value !== "malena") {
+                alert("Usuario y contraseña incorrectos")
+                redireccionarUsuario()
+                return 0
+            } else {
+            if (document.formulario_log.usuario.value == "malena" && document.formulario_log.contraseña.value == "malena") {
+                alert("Usuario y contraseña correctos")
+                redireccionarGestion()
+                return 0
+            }           
+            }
+            alert("Muchas gracias por enviar el formulario")
+            document.formulario_log.submit()
+        }
+
+        function redireccionarUsuario() {
+            window.location.href = "index_usuario.html";
+        }
+
+        function redireccionarGestion() {
+            window.location.href = "index_admin.html";
+        }
+            
+            //Finalmente, si llegó hasta aqui, se envia el form.
+            //alert("Muchas gracias por enviar el formulario")
+            //document.formulario_log.submit()
+        
+    </script>
+
+</body>
+
+</html>
